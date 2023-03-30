@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimChuo-Canvas</title>
+    <link rel="stylesheet" href="canva_style.css">
+</head>
+<body>
+    <div class = "container">
+        <div class = "tools-board">
+            <div class="row">
+                <table>
+                    <tr>
+                        <td><button class ="toolbtn" id = "brush" style="background-image: url('images/pen.png')" ></button></td>
+                        <td><button class ="toolbtn" id = "eraser" style="background-image: url('images/rubber2.png')"></button></td>
+                        <td><button class ="toolbtn" id = "straight" style="background-image: url('images/diagonal-line.png')"></button></td>                          
+                    </tr>
+                    <tr>
+                        <td><button class ="toolbtn" id = "rectangle" style="background-image: url('images/rectangle-button.png')"></button></td>
+                        <td><button class ="toolbtn" id = "circle" style="background-image: url('images/circle-button.png')"></button></td>
+                        <td><button  class ="toolbtn" id = "triangle" style="background-image: url('images/triangle-button.png')"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button class = "toolbtn" id = "Text" style="background-image: url('images/text-button.png')"></button></td>
+                        <td><button class = "tool-btn2" id = "undo" style="background-image: url('images/undo-button.png')"></button></td>
+                        <td><button class = "tool-btn2" id = "redo" style="background-image: url('images/redo-button.png')"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="tool-btn2" id = "saveImg" style="background-image: url('images/download-button.png')"></button></td>
+                        <td><label for="uploader"><img class = "tool-btn2" src="images/upload-button.png"></label></td>
+                        <td><button class="tool-btn2" id = "clear-canvas" style="background-image: url('images/bin-black.png')"></button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class = "slider-container">
+                <img id = "pen-size-left" src="images/pen-size.png" alt="brush-size">
+                <input type = "range" id = "slider" min = "1" max = "40" value = "10">
+                <img id = "pen-size-right" src="images/pen-size.png" alt="brush-size">
+            </div>
+            <div class = "block-container" style="margin-top: 5px;">
+                <canvas id = "block" width="180" height="90">
+                </canvas>
+            </div>
+            <div class="color-picker-block" style="margin-top: 5px;">              
+                <input class = "color-picker" type = "number" id = "R" min="0" max="255" value = "0">
+                <input class = "color-picker" type = "number" id = "G" min="0" max="255" value = "0">
+                <input class = "color-picker" type = "number" id = "B" min="0" max="255" value = "0">
+            </div>
+            <div class = "Font">
+                <select id="font-chooser">
+                    <option value="Arial">Arial</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="STFangsong">華文仿宋</option>
+                </select>
+                <input class = "font-sizer" type = "number" id = "font-sizer" min="12" max="80" value = "24">
+            </div>
+        </div>
+        <div class = "draw-board"  style="position:relative">
+            <canvas id = "myCanvas" width="850" height="670" style="position:relative">            
+            </canvas>
+            <input type = "text" id = "text-input" style="display:none ;position: absolute;top:0px;left: 0px;">
+            <input type="file" id="uploader" accept="image/*"/>
+        </div>
+    </div>
+    <script src="Canva_hw1.js"></script>
+</body>
+</html>
